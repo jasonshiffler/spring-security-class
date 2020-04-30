@@ -1,4 +1,4 @@
-package com.shiffler.springsecurityclass.configuration;
+package com.shiffler.springsecurityclass.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
