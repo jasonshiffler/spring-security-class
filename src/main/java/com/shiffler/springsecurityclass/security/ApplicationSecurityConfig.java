@@ -38,7 +38,14 @@ public class ApplicationSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .httpBasic(); //httpBasic requires authentication everytime a resource is accessed
+                //.httpBasic(); //httpBasic requires authentication everytime a resource is accessed
+                .formLogin() //enable form based authentication, leverages SESSIONID cookie after first auth
+                             //by default sessionid is stored in memory
+                .loginPage("/login") //defines the login page
+                .permitAll() //makes sure the login page is accessible.
+                .defaultSuccessUrl("/courses",true);
+
+
     }
 
     @Override
